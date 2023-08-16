@@ -1,0 +1,42 @@
+[
+    {   "id": 1,
+        "titulo": "Polera de algodón",
+        "descripcion": "Una polera blanca de algodon en tallas S,M,L",
+        "imagen": "https://picsum.photos/id/233/300/200",
+        "categoria": "poleras",
+        "precio": 14000,
+        "stock": 8
+    },
+    {   "id": 2,
+        "titulo": "Pantalón de Mujer",
+        "descripcion": "Una Pantalón negro de tela en tallas S,M,L",
+        "imagen": "https://picsum.photos/id/237/300/200",
+        "categoria": "pantalones",
+        "precio": 34000,
+        "stock": 8
+    },
+    {   "id": 3,
+        "titulo": "Zapatillas Adidas",
+        "descripcion": "Zaptatillas de tenis Adidas nros 35 a 45",
+        "imagen": "https://placekitten.com/300/200",
+        "categoria": "deportes",
+        "precio": 54000,
+        "stock": 8
+    },
+    {   "id": 4,
+        "titulo": "Pantalón Mujer ",
+        "descripcion": "Pantalón tela para mujer tallas ",
+        "imagen": "https://placekitten.com/300/200",
+        "categoria": "pantalones",
+        "precio": 32000,
+        "stock": 8
+    },
+    {   "id": 5,
+        "titulo": "Buzo de Mujer",
+        "descripcion": "Buzo azul deportivo de tela respirable  tallas S,M,L",
+        "imagen": "https://picsum.photos/id/234/300/200",
+        "categoria": "deportes",
+        "precio": 27000,
+        "stock": 8
+    }
+]
