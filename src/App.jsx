@@ -8,13 +8,51 @@ import Nosotros from './components/Nosotros'
 
 import Footer from './components/Footer'
 import Contacto from './components/Contacto'
+import { CartContext } from './context/CartContext'
+import { useEffect, useState } from 'react'
+import { doc, getDoc } from 'firebase/firestore'
+import { firestore } from './firebase/client'
 
 function App() {
+  useEffect(()=>{
+    const docRef =  doc(firestore, "items", "USqGNZXNnjiUqBYN9O2r" );
+    getDoc(docRef).then((snapshot) => {
+      console.log({snapshot})
+      if(snapshot.exists()){
+        console.log("La info del cocumento es :", snapshot.data());
+      }else{
+        console.log("El documento no existe")
+      }
+  });
+    
+  },[]);
+
+  const [carrito, setCarrito] = useState([])
+
+  const agregarAlCarrito = (item, cantidad) => {
+    const itemAgregado = {...item, cantidad}
+
+    const nuevoCarrito = [...carrito]
+
+    const estaEnelCarrito = carrito.find((producto) =>producto.id === itemAgregado.id);
+
+    if(estaEnelCarrito){
+      estaEnelCarrito.cantidad +=  cantidad;
+      setCarrito(nuevoCarrito)
+    }else{
+      nuevoCarrito.push(itemAgregado)
+    }
+    setCarrito(nuevoCarrito)
+    
+  }
+  const cantidadEncarrito = (item, cantidad) => {
+    return carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+  }
 
   return (
-    <>
+    
+    <CartContext.Provider value={ {carrito, agregarAlCarrito, cantidadEncarrito} }>
       <BrowserRouter>
-
         <Navbar />
 
         <Routes>
@@ -27,11 +65,9 @@ function App() {
         </Routes>
 
         <Footer />
-
-
       </BrowserRouter>
        
-    </>
+    </CartContext.Provider>
   )
 }
 

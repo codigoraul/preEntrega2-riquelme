@@ -7,7 +7,6 @@ const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null)
     const id = Number(useParams().id);
-    console.log(id)
 
     useEffect(() => {
         getDatosItem(id)

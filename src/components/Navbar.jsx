@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 import DisplayIcons from "../helpers/DisplayIcons"
+import CartWidget from "./CartWidget";
+
 const logoUrl = './logo-lorder.png';
 
 const Navbar = () => {
@@ -20,14 +22,16 @@ const Navbar = () => {
                             <li className="nav-item"><Link className="btn btn-outline-dark nav-link" to="/productos/pantalones">Pantalones</Link></li>
                             <li className="nav-item"><Link className="btn btn-outline-dark nav-link" to="/productos/deportes">Deportes</Link></li>
                             <li className="nav-item"><Link className="btn btn-outline-dark nav-link" to="/contacto">Contacto</Link></li>
+                            
                         </ul>
                     </nav>
                 </div>
                 <div className="col-md-2">
                     <DisplayIcons />
-                    
-                   <p>cantidad: 2</p>
-                   
+                 
+                    <Link className="botoncito" to="/carrito"> <CartWidget /></Link>
+
+ 
                 </div>
             </div>  
         </div>
